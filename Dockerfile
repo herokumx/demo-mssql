@@ -20,3 +20,4 @@ RUN yum -y install $BUILD_PKGS && \
 #USER mssql
 ENTRYPOINT ["/bin/sh", "-c", "/opt/mssql/bin/sqlservr"]
 CMD docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Salesforce1" -p $PORT:1433 -d registry.heroku.com/demo-mssql 
+#CMD [\"/bin/sh\" \"-c\" \"/opt/mssql/bin/sqlservr.sh\"]
